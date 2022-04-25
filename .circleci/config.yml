@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.12
+      - run: docker run --mac-address 00:00:00:00:00:11 ubuntu:trusty ifconfig
